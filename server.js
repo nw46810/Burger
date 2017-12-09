@@ -5,7 +5,7 @@ var bodyParser = require('body-parser');
 var app = express();
 
 // set port to 3000 or whatever heroku (deployment site) sets it to
-var PORT = process.env.PORT || 3000;
+var port = process.env.PORT || 3000;
 
 app.use(express.static(__dirname + '/public'));
 
@@ -29,6 +29,6 @@ var routes = require('./controllers/burgers_controller.js');
 app.use('/', routes);
 
 // Initiate the listener.
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
+app.listen(port, function() {
+  console.log("App listening on PORT " + port);
 });
